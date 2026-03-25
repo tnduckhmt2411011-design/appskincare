@@ -1,6 +1,6 @@
 ﻿namespace appSkincare
 {
-    partial class Form2
+    partial class Form6
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,12 @@
         private void InitializeComponent()
         {
             pnlScreen = new Panel();
-            lnkDangKy = new LinkLabel();
+            lnkDangNhap = new LinkLabel();
+            panel1 = new Panel();
+            txtHoTen = new TextBox();
+            lblHoTen = new Label();
             btnThoat = new Button();
-            btnDangNhap = new Button();
+            btnDangKy = new Button();
             pnlLine2 = new Panel();
             txtMatKhau = new TextBox();
             lblMatKhau = new Label();
@@ -48,9 +51,12 @@
             // pnlScreen
             // 
             pnlScreen.BackColor = Color.White;
-            pnlScreen.Controls.Add(lnkDangKy);
+            pnlScreen.Controls.Add(lnkDangNhap);
+            pnlScreen.Controls.Add(panel1);
+            pnlScreen.Controls.Add(txtHoTen);
+            pnlScreen.Controls.Add(lblHoTen);
             pnlScreen.Controls.Add(btnThoat);
-            pnlScreen.Controls.Add(btnDangNhap);
+            pnlScreen.Controls.Add(btnDangKy);
             pnlScreen.Controls.Add(pnlLine2);
             pnlScreen.Controls.Add(txtMatKhau);
             pnlScreen.Controls.Add(lblMatKhau);
@@ -63,18 +69,46 @@
             pnlScreen.Location = new Point(0, 0);
             pnlScreen.Name = "pnlScreen";
             pnlScreen.Size = new Size(800, 450);
-            pnlScreen.TabIndex = 0;
+            pnlScreen.TabIndex = 1;
             // 
-            // lnkDangKy
+            // lnkDangNhap
             // 
-            lnkDangKy.AutoSize = true;
-            lnkDangKy.LinkColor = Color.FromArgb(24, 119, 242);
-            lnkDangKy.Location = new Point(410, 398);
-            lnkDangKy.Name = "lnkDangKy";
-            lnkDangKy.Size = new Size(183, 15);
-            lnkDangKy.TabIndex = 13;
-            lnkDangKy.TabStop = true;
-            lnkDangKy.Text = "Chưa có tài khoản? Đăng ký ngay";
+            lnkDangNhap.AutoSize = true;
+            lnkDangNhap.LinkColor = Color.FromArgb(24, 119, 242);
+            lnkDangNhap.Location = new Point(412, 414);
+            lnkDangNhap.Name = "lnkDangNhap";
+            lnkDangNhap.Size = new Size(155, 15);
+            lnkDangNhap.TabIndex = 12;
+            lnkDangNhap.TabStop = true;
+            lnkDangNhap.Text = "Đã có tài khoản? Đăng nhập";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(24, 119, 242);
+            panel1.Location = new Point(412, 327);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(320, 2);
+            panel1.TabIndex = 5;
+            // 
+            // txtHoTen
+            // 
+            txtHoTen.BorderStyle = BorderStyle.None;
+            txtHoTen.Font = new Font("Segoe UI", 12F);
+            txtHoTen.Location = new Point(412, 307);
+            txtHoTen.Name = "txtHoTen";
+            txtHoTen.Size = new Size(320, 22);
+            txtHoTen.TabIndex = 11;
+            // 
+            // lblHoTen
+            // 
+            lblHoTen.AutoSize = true;
+            lblHoTen.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            lblHoTen.ForeColor = Color.Gray;
+            lblHoTen.Location = new Point(410, 268);
+            lblHoTen.Name = "lblHoTen";
+            lblHoTen.Size = new Size(100, 17);
+            lblHoTen.TabIndex = 10;
+            lblHoTen.Text = "Tên đăng nhập";
             // 
             // btnThoat
             // 
@@ -89,28 +123,26 @@
             btnThoat.TabIndex = 9;
             btnThoat.Text = "X";
             btnThoat.UseVisualStyleBackColor = true;
-            btnThoat.Click += btnThoat_Click;
             // 
-            // btnDangNhap
+            // btnDangKy
             // 
-            btnDangNhap.BackColor = Color.FromArgb(24, 119, 242);
-            btnDangNhap.Cursor = Cursors.Hand;
-            btnDangNhap.FlatAppearance.BorderSize = 0;
-            btnDangNhap.FlatStyle = FlatStyle.Flat;
-            btnDangNhap.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnDangNhap.ForeColor = Color.White;
-            btnDangNhap.Location = new Point(410, 336);
-            btnDangNhap.Name = "btnDangNhap";
-            btnDangNhap.Size = new Size(320, 45);
-            btnDangNhap.TabIndex = 8;
-            btnDangNhap.Text = "Login";
-            btnDangNhap.UseVisualStyleBackColor = false;
-            btnDangNhap.Click += btnDangNhap_Click;
+            btnDangKy.BackColor = Color.FromArgb(24, 119, 242);
+            btnDangKy.Cursor = Cursors.Hand;
+            btnDangKy.FlatAppearance.BorderSize = 0;
+            btnDangKy.FlatStyle = FlatStyle.Flat;
+            btnDangKy.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnDangKy.ForeColor = Color.White;
+            btnDangKy.Location = new Point(410, 355);
+            btnDangKy.Name = "btnDangKy";
+            btnDangKy.Size = new Size(320, 45);
+            btnDangKy.TabIndex = 8;
+            btnDangKy.Text = "Register";
+            btnDangKy.UseVisualStyleBackColor = false;
             // 
             // pnlLine2
             // 
             pnlLine2.BackColor = Color.FromArgb(24, 119, 242);
-            pnlLine2.Location = new Point(410, 285);
+            pnlLine2.Location = new Point(410, 240);
             pnlLine2.Name = "pnlLine2";
             pnlLine2.Size = new Size(320, 2);
             pnlLine2.TabIndex = 7;
@@ -119,7 +151,7 @@
             // 
             txtMatKhau.BorderStyle = BorderStyle.None;
             txtMatKhau.Font = new Font("Segoe UI", 12F);
-            txtMatKhau.Location = new Point(410, 260);
+            txtMatKhau.Location = new Point(410, 220);
             txtMatKhau.Name = "txtMatKhau";
             txtMatKhau.PasswordChar = '*';
             txtMatKhau.Size = new Size(320, 22);
@@ -130,7 +162,7 @@
             lblMatKhau.AutoSize = true;
             lblMatKhau.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             lblMatKhau.ForeColor = Color.Gray;
-            lblMatKhau.Location = new Point(410, 230);
+            lblMatKhau.Location = new Point(412, 183);
             lblMatKhau.Name = "lblMatKhau";
             lblMatKhau.Size = new Size(66, 17);
             lblMatKhau.TabIndex = 5;
@@ -139,7 +171,7 @@
             // pnlLine1
             // 
             pnlLine1.BackColor = Color.FromArgb(24, 119, 242);
-            pnlLine1.Location = new Point(410, 195);
+            pnlLine1.Location = new Point(410, 143);
             pnlLine1.Name = "pnlLine1";
             pnlLine1.Size = new Size(320, 2);
             pnlLine1.TabIndex = 4;
@@ -148,7 +180,7 @@
             // 
             txtDangNhap.BorderStyle = BorderStyle.None;
             txtDangNhap.Font = new Font("Segoe UI", 12F);
-            txtDangNhap.Location = new Point(410, 170);
+            txtDangNhap.Location = new Point(412, 123);
             txtDangNhap.Name = "txtDangNhap";
             txtDangNhap.Size = new Size(320, 22);
             txtDangNhap.TabIndex = 3;
@@ -158,7 +190,7 @@
             lblTaiKhoan.AutoSize = true;
             lblTaiKhoan.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             lblTaiKhoan.ForeColor = Color.Gray;
-            lblTaiKhoan.Location = new Point(410, 140);
+            lblTaiKhoan.Location = new Point(412, 86);
             lblTaiKhoan.Name = "lblTaiKhoan";
             lblTaiKhoan.Size = new Size(68, 17);
             lblTaiKhoan.TabIndex = 2;
@@ -169,11 +201,11 @@
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             lblTitle.ForeColor = Color.Black;
-            lblTitle.Location = new Point(497, 39);
+            lblTitle.Location = new Point(462, 9);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(146, 60);
+            lblTitle.Size = new Size(236, 60);
             lblTitle.TabIndex = 1;
-            lblTitle.Text = "\r\nĐĂNG NHẬP";
+            lblTitle.Text = "\r\nĐĂNG KÝ TÀI KHOẢN";
             // 
             // pnlLeft
             // 
@@ -196,16 +228,16 @@
             lblWelcome.Text = "WELCOME TO\r\nSKINCARE APP";
             lblWelcome.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // Form2
+            // Form6
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(pnlScreen);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Form2";
+            Name = "Form6";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form2";
+            Text = "Form6";
             pnlScreen.ResumeLayout(false);
             pnlScreen.PerformLayout();
             pnlLeft.ResumeLayout(false);
@@ -215,17 +247,20 @@
         #endregion
 
         private Panel pnlScreen;
+        private Button btnThoat;
+        private Button btnDangKy;
+        private Panel pnlLine2;
+        private TextBox txtMatKhau;
+        private Label lblMatKhau;
+        private Panel pnlLine1;
+        private TextBox txtDangNhap;
+        private Label lblTaiKhoan;
+        private Label lblTitle;
         private Panel pnlLeft;
         private Label lblWelcome;
-        private Label lblTitle;
-        private Label lblTaiKhoan;
-        private TextBox txtDangNhap;
-        private Panel pnlLine1;
-        private Label lblMatKhau;
-        private TextBox txtMatKhau;
-        private Panel pnlLine2;
-        private Button btnDangNhap;
-        private Button btnThoat;
-        private LinkLabel lnkDangKy;
+        private Panel panel1;
+        private TextBox txtHoTen;
+        private Label lblHoTen;
+        private LinkLabel lnkDangNhap;
     }
 }

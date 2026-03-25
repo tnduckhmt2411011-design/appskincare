@@ -59,5 +59,55 @@ namespace appSkincare.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _10863657_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("10863657-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap anhdaidien_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("anhdaidien-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Hamburger_icon_svg_removebg_preview__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Hamburger_icon.svg-removebg-preview (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lay_anh_dai_dien_facebook_dep_26_b93bb9c467 {
+            get {
+                object obj = ResourceManager.GetObject("lay_anh_dai_dien_facebook_dep_26_b93bb9c467", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OnePiece_Monkey_D_Luffy_1024x819_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("OnePiece-Monkey-D-Luffy-1024x819-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

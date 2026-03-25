@@ -160,6 +160,7 @@
             // 
             // txtTinhTrangDa
             // 
+            txtTinhTrangDa.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtTinhTrangDa.Location = new Point(381, 92);
             txtTinhTrangDa.Multiline = true;
             txtTinhTrangDa.Name = "txtTinhTrangDa";
@@ -238,6 +239,7 @@
             // dgvLichTrinh
             // 
             dgvLichTrinh.AllowUserToAddRows = false;
+            dgvLichTrinh.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvLichTrinh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvLichTrinh.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvLichTrinh.BackgroundColor = Color.White;
