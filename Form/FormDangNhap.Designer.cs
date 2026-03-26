@@ -1,6 +1,6 @@
 ﻿namespace appSkincare
 {
-    partial class Form2
+    partial class FormDangNhap
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             pnlScreen = new Panel();
+            ckbHienMatKhau = new CheckBox();
             lnkDangKy = new LinkLabel();
             btnThoat = new Button();
             btnDangNhap = new Button();
@@ -36,7 +37,7 @@
             txtMatKhau = new TextBox();
             lblMatKhau = new Label();
             pnlLine1 = new Panel();
-            txtDangNhap = new TextBox();
+            txtTaiKhoan = new TextBox();
             lblTaiKhoan = new Label();
             lblTitle = new Label();
             pnlLeft = new Panel();
@@ -48,6 +49,7 @@
             // pnlScreen
             // 
             pnlScreen.BackColor = Color.White;
+            pnlScreen.Controls.Add(ckbHienMatKhau);
             pnlScreen.Controls.Add(lnkDangKy);
             pnlScreen.Controls.Add(btnThoat);
             pnlScreen.Controls.Add(btnDangNhap);
@@ -55,7 +57,7 @@
             pnlScreen.Controls.Add(txtMatKhau);
             pnlScreen.Controls.Add(lblMatKhau);
             pnlScreen.Controls.Add(pnlLine1);
-            pnlScreen.Controls.Add(txtDangNhap);
+            pnlScreen.Controls.Add(txtTaiKhoan);
             pnlScreen.Controls.Add(lblTaiKhoan);
             pnlScreen.Controls.Add(lblTitle);
             pnlScreen.Controls.Add(pnlLeft);
@@ -64,6 +66,19 @@
             pnlScreen.Name = "pnlScreen";
             pnlScreen.Size = new Size(800, 450);
             pnlScreen.TabIndex = 0;
+            // 
+            // ckbHienMatKhau
+            // 
+            ckbHienMatKhau.AutoSize = true;
+            ckbHienMatKhau.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ckbHienMatKhau.ForeColor = Color.Gray;
+            ckbHienMatKhau.Location = new Point(414, 302);
+            ckbHienMatKhau.Name = "ckbHienMatKhau";
+            ckbHienMatKhau.Size = new Size(102, 17);
+            ckbHienMatKhau.TabIndex = 14;
+            ckbHienMatKhau.Text = "Hiện mật khẩu";
+            ckbHienMatKhau.UseVisualStyleBackColor = true;
+            ckbHienMatKhau.CheckedChanged += ckbHienMatKhau_CheckedChanged;
             // 
             // lnkDangKy
             // 
@@ -144,14 +159,14 @@
             pnlLine1.Size = new Size(320, 2);
             pnlLine1.TabIndex = 4;
             // 
-            // txtDangNhap
+            // txtTaiKhoan
             // 
-            txtDangNhap.BorderStyle = BorderStyle.None;
-            txtDangNhap.Font = new Font("Segoe UI", 12F);
-            txtDangNhap.Location = new Point(410, 170);
-            txtDangNhap.Name = "txtDangNhap";
-            txtDangNhap.Size = new Size(320, 22);
-            txtDangNhap.TabIndex = 3;
+            txtTaiKhoan.BorderStyle = BorderStyle.None;
+            txtTaiKhoan.Font = new Font("Segoe UI", 12F);
+            txtTaiKhoan.Location = new Point(410, 170);
+            txtTaiKhoan.Name = "txtTaiKhoan";
+            txtTaiKhoan.Size = new Size(320, 22);
+            txtTaiKhoan.TabIndex = 3;
             // 
             // lblTaiKhoan
             // 
@@ -203,9 +218,9 @@
             ClientSize = new Size(800, 450);
             Controls.Add(pnlScreen);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Form2";
+            Name = "FormDangNhap";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form2";
+            Text = "FormDangNhap";
             pnlScreen.ResumeLayout(false);
             pnlScreen.PerformLayout();
             pnlLeft.ResumeLayout(false);
@@ -219,7 +234,7 @@
         private Label lblWelcome;
         private Label lblTitle;
         private Label lblTaiKhoan;
-        private TextBox txtDangNhap;
+        private TextBox txtTaiKhoan;
         private Panel pnlLine1;
         private Label lblMatKhau;
         private TextBox txtMatKhau;
@@ -227,5 +242,6 @@
         private Button btnDangNhap;
         private Button btnThoat;
         private LinkLabel lnkDangKy;
+        private CheckBox ckbHienMatKhau;
     }
 }

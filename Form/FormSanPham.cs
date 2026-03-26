@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace appSkincare
 {
-    public partial class Form3 : Form
+    public partial class FormSanPham : Form
     {
         string chuoiKetNoi = @"Data Source=localhost;Initial Catalog=QuanLySkincare_V1;Integrated Security=True";
 
@@ -42,7 +42,7 @@ namespace appSkincare
                 dgvSanPham.Columns["TÊN SẢN PHẨM"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
         }
-        public Form3()
+        public FormSanPham()
         {
             InitializeComponent();
         }
@@ -67,7 +67,7 @@ namespace appSkincare
         {
             if (txtSanPham.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập Tên sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng nhập Tên và chọn Phân loại sản phẩm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace appSkincare
 {
-    public partial class Form7 : Form
+    public partial class FormDanhGia : Form
     {
-        public Form7()
+        public FormDanhGia()
         {
             InitializeComponent();
         }

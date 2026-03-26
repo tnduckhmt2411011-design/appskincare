@@ -1,6 +1,6 @@
 ﻿namespace appSkincare
 {
-    partial class Form4
+    partial class FormTraCuu
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTraCuu));
             panel2 = new Panel();
             dgvThongKe = new DataGridView();
             btnTraCuu = new Button();
@@ -154,9 +154,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(830, 360);
             Controls.Add(panel2);
-            Name = "Form4";
+            Name = "FormTraCuu";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form4";
+            Text = "Tra Cứu";
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvThongKe).EndInit();

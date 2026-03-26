@@ -9,9 +9,9 @@ using System.Data.SqlClient;
 
 namespace appSkincare
 {
-    public partial class Form6 : Form
+    public partial class FormDangKy : Form
     {
-        public Form6()
+        public FormDangKy()
         {
             InitializeComponent();
             // Gắn sự kiện cho các control
@@ -24,7 +24,7 @@ namespace appSkincare
         {
             // Ẩn Form đăng ký, mở Form đăng nhập và đóng Form đăng ký sau khi Form2 đóng
             this.Hide();
-            Form2 frmLogin = new Form2();
+            FormDangNhap frmLogin = new FormDangNhap();
             frmLogin.ShowDialog();
             this.Close();
         }
@@ -37,7 +37,7 @@ namespace appSkincare
         private void btnDangKy_Click(object sender, EventArgs e)
         {
             // Kiểm tra rỗng
-            if (string.IsNullOrWhiteSpace(txtHoTen.Text) || string.IsNullOrWhiteSpace(txtDangNhap.Text) || string.IsNullOrWhiteSpace(txtMatKhau.Text))
+            if (string.IsNullOrWhiteSpace(txtHoTen.Text) || string.IsNullOrWhiteSpace(txtTaiKhoan.Text) || string.IsNullOrWhiteSpace(txtMatKhau.Text))
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -53,7 +53,7 @@ namespace appSkincare
                     string sql = "INSERT INTO TaiKhoan (TenDangNhap, MatKhau, HoTen) VALUES (@TK, @MK, @HT)";
                     using (SqlCommand cmd = new SqlCommand(sql, con))
                     {
-                        cmd.Parameters.AddWithValue("@TK", txtDangNhap.Text.Trim());
+                        cmd.Parameters.AddWithValue("@TK", txtTaiKhoan.Text.Trim());
                         cmd.Parameters.AddWithValue("@MK", txtMatKhau.Text.Trim());
                         cmd.Parameters.AddWithValue("@HT", txtHoTen.Text.Trim());
 
@@ -63,12 +63,12 @@ namespace appSkincare
                             MessageBox.Show("Đăng ký thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             // Xóa rỗng các textbox
                             txtHoTen.Clear();
-                            txtDangNhap.Clear();
+                            txtTaiKhoan.Clear();
                             txtMatKhau.Clear();
 
                             // Chuyển về Form đăng nhập
                             this.Hide();
-                            Form2 frmLogin = new Form2();
+                            FormDangNhap frmLogin = new FormDangNhap();
                             frmLogin.ShowDialog();
                             this.Close();
                         }
@@ -87,6 +87,24 @@ namespace appSkincare
                     MessageBox.Show("Lỗi khi kết nối cơ sở dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void txtMatKhau_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ckbHienMatKhau_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbHienMatKhau.Checked)
+            {
+                txtMatKhau.PasswordChar = '\0'; // Hiện chữ
+            }
+            else
+            {
+                txtMatKhau.PasswordChar = '*'; // Ẩn chữ
+            }
+
         }
     }
 }

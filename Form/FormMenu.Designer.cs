@@ -1,6 +1,6 @@
 ﻿namespace appSkincare
 {
-    partial class Form5
+    partial class FormMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
             panel1 = new Panel();
             btnDanhGia = new Button();
             imageList1 = new ImageList(components);
@@ -140,7 +140,7 @@
             btnThongKe.ImageAlign = ContentAlignment.MiddleLeft;
             btnThongKe.ImageIndex = 9;
             btnThongKe.ImageList = imageList1;
-            btnThongKe.Location = new Point(-4, 415);
+            btnThongKe.Location = new Point(-4, 389);
             btnThongKe.MinimumSize = new Size(0, 60);
             btnThongKe.Name = "btnThongKe";
             btnThongKe.Padding = new Padding(15, 0, 0, 0);
@@ -161,7 +161,7 @@
             btnSanPham.ImageAlign = ContentAlignment.MiddleLeft;
             btnSanPham.ImageIndex = 6;
             btnSanPham.ImageList = imageList1;
-            btnSanPham.Location = new Point(-10, 251);
+            btnSanPham.Location = new Point(-10, 233);
             btnSanPham.MinimumSize = new Size(0, 60);
             btnSanPham.Name = "btnSanPham";
             btnSanPham.Padding = new Padding(20, 0, 0, 0);
@@ -325,7 +325,7 @@
             label1.Text = "QUẢN LÝ LỊCH TRÌNH SKINCARE";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // Form5
+            // FormMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -334,10 +334,10 @@
             Controls.Add(pnlScreen);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Form5";
+            Name = "FormMenu";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form5";
-            Load += Form5_Load;
+            Text = "Quản lý lịch trình Skincare";
+            Load += FormMenu_Load;
             panel1.ResumeLayout(false);
             pnlScreen.ResumeLayout(false);
             pnlAccountMenu.ResumeLayout(false);

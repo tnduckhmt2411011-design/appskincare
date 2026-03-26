@@ -8,9 +8,9 @@ using System.Data.SqlClient;
 
 namespace appSkincare
 {
-    public partial class Form2 : Form
+    public partial class FormDangNhap : Form
     {
-        public Form2()
+        public FormDangNhap()
         {
             InitializeComponent();
             lnkDangKy.LinkClicked += lnkDangKy_LinkClicked;
@@ -19,7 +19,7 @@ namespace appSkincare
         private void lnkDangKy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
-            Form6 frmRegister = new Form6();
+            FormDangKy frmRegister = new FormDangKy();
             frmRegister.ShowDialog();
             this.Close();
         }
@@ -32,7 +32,7 @@ namespace appSkincare
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             // Kiểm tra có để trống ô nào không
-            if (string.IsNullOrWhiteSpace(txtDangNhap.Text) || string.IsNullOrWhiteSpace(txtMatKhau.Text))
+            if (string.IsNullOrWhiteSpace(txtTaiKhoan.Text) || string.IsNullOrWhiteSpace(txtMatKhau.Text))
             {
                 MessageBox.Show("Vui lòng nhập tài khoản và mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -48,7 +48,7 @@ namespace appSkincare
                     con.Open();
                     string sql = "SELECT HoTen FROM TaiKhoan WHERE TenDangNhap = @TaiKhoan AND MatKhau = @MatKhau";
                     SqlCommand cmd = new SqlCommand(sql, con);
-                    cmd.Parameters.AddWithValue("@TaiKhoan", txtDangNhap.Text);
+                    cmd.Parameters.AddWithValue("@TaiKhoan", txtTaiKhoan.Text);
                     cmd.Parameters.AddWithValue("@MatKhau", txtMatKhau.Text);
 
                     // Thực thi và lấy kết quả
@@ -60,7 +60,7 @@ namespace appSkincare
                         string hoTenNguoiDung = result.ToString(); // Ép kiểu lấy họ tên
                         MessageBox.Show("Đăng nhập thành công", "Chào mừng", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        Form5 frmDash = new Form5(hoTenNguoiDung);
+                        FormMenu frmDash = new FormMenu(hoTenNguoiDung);
                         this.Hide(); // Giấu form đăng nhập đi
                         frmDash.ShowDialog();
                         this.Close(); // Tắt hoàn toàn form đăng nhập khi đóng form tổng
@@ -74,6 +74,18 @@ namespace appSkincare
                 {
                     MessageBox.Show("Lỗi kết nối: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void ckbHienMatKhau_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbHienMatKhau.Checked)
+            {
+                txtMatKhau.PasswordChar = '\0'; // Hiện chữ
+            }
+            else
+            {
+                txtMatKhau.PasswordChar = '*'; // Ẩn chữ
             }
         }
     }

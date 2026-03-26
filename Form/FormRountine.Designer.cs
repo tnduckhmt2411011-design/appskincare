@@ -1,6 +1,6 @@
 ﻿namespace appSkincare
 {
-    partial class Form1
+    partial class FormRountine
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRountine));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel2 = new Panel();
@@ -277,10 +277,10 @@
             Controls.Add(panel2);
             Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Name = "Form1";
+            Name = "FormRoutine";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
-            Load += Form1_Load;
+            Text = "Quản lý Routine";
+            Load += FormRoutine_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvLichTrinh).EndInit();

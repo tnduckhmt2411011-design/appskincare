@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace appSkincare
 {
-    public partial class Form5 : Form
+    public partial class FormMenu : Form
     {
         // Biến để nhớ xem Form nào đang mở
         private Form currentFormChild;
@@ -27,13 +27,10 @@ namespace appSkincare
         private string btnThoatText;
 
         // Constructor bổ sung nhận tên người dùng và gắn sự kiện cho avatar / đăng xuất
-        public Form5(string hoTen)
+        public FormMenu(string hoTen)
         {
             // Khởi tạo các control (bắt buộc)
             InitializeComponent();
-
-            pbAccount.MouseEnter += pbAccount_MouseEnter; 
-            pbAccount.MouseLeave += pbAccount_MouseLeave;
 
             // --- Gắn sự kiện cho pbAccount và btnDangXuat NGAY BÊN DƯỚI InitializeComponent() ---
             if (pbAccount != null)
@@ -90,6 +87,11 @@ namespace appSkincare
                 btnThongKe.BackColor = Color.Teal;
                 btnDanhGia.BackColor = Color.Teal;
 
+                // Trả màu chữ về mặc định
+                btnRoutine.ForeColor = SystemColors.ButtonFace;
+                btnSanPham.ForeColor = SystemColors.ButtonFace;
+                btnThongKe.ForeColor = SystemColors.ButtonFace;
+                btnDanhGia.ForeColor = SystemColors.ButtonFace;
 
                 // bật sáng nút đang chọn
                 currentButton = (Button)btnSender;
@@ -129,26 +131,26 @@ namespace appSkincare
         // GÁN SỰ KIỆN CLICK CHO TỪNG NÚT BÊN MENU
         private void btnRoutine_Click_1(object sender, EventArgs e)
         {
-            OpenChildForm(new Form1(), sender);
+            OpenChildForm(new FormRountine(), sender);
         }
 
         private void btnSanPham_Click_1(object sender, EventArgs e)
         {
-            OpenChildForm(new Form3(), sender);
+            OpenChildForm(new FormSanPham(), sender);
         }
 
         private void btnThongKe_Click_1(object sender, EventArgs e)
         {
-            OpenChildForm(new Form4(), sender);
+            OpenChildForm(new FormTraCuu(), sender);
         }
 
         // Sự kiện Click cho nút Đánh Giá: nhúng Form7 vào pnlScreen
         private void btnDanhGia_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Form7(), sender);
+            OpenChildForm(new FormDanhGia(), sender);
         }
 
-        private void Form5_Load(object sender, EventArgs e)
+        private void FormMenu_Load(object sender, EventArgs e)
         {
             btnRoutine.PerformClick();
         }
@@ -157,7 +159,7 @@ namespace appSkincare
         private void sidebarTimer_Tick(object sender, EventArgs e)
         {
             // Tốc độ thay đổi mỗi Tick (px)
-            int step = 25; // có thể đặt 10-15
+            int step = 25; // có thể đặt tuỳ ý
 
             if (isSidebarExpanded)
             {
@@ -251,14 +253,14 @@ namespace appSkincare
         {
             // Ẩn form hiện tại, mở Form2 dưới dạng dialog, sau đó đóng form này
             this.Hide();
-            Form2 frmLogin = new Form2();
+            FormDangNhap frmLogin = new FormDangNhap();
             frmLogin.ShowDialog();
             this.Close();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn thoát khỏi hệ thống Skincare không?",
+            DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn thoát ứng dụng Skincare không?",
                                       "Xác nhận thoát",
                                       MessageBoxButtons.YesNo,
                                       MessageBoxIcon.Question);

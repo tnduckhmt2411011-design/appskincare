@@ -1,6 +1,6 @@
 ﻿namespace appSkincare
 {
-    partial class Form6
+    partial class FormDangKy
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             pnlScreen = new Panel();
+            ckbHienMatKhau = new CheckBox();
             lnkDangNhap = new LinkLabel();
             panel1 = new Panel();
             txtHoTen = new TextBox();
@@ -39,7 +40,7 @@
             txtMatKhau = new TextBox();
             lblMatKhau = new Label();
             pnlLine1 = new Panel();
-            txtDangNhap = new TextBox();
+            txtTaiKhoan = new TextBox();
             lblTaiKhoan = new Label();
             lblTitle = new Label();
             pnlLeft = new Panel();
@@ -51,6 +52,8 @@
             // pnlScreen
             // 
             pnlScreen.BackColor = Color.White;
+            pnlScreen.Controls.Add(pnlLine1);
+            pnlScreen.Controls.Add(ckbHienMatKhau);
             pnlScreen.Controls.Add(lnkDangNhap);
             pnlScreen.Controls.Add(panel1);
             pnlScreen.Controls.Add(txtHoTen);
@@ -60,8 +63,7 @@
             pnlScreen.Controls.Add(pnlLine2);
             pnlScreen.Controls.Add(txtMatKhau);
             pnlScreen.Controls.Add(lblMatKhau);
-            pnlScreen.Controls.Add(pnlLine1);
-            pnlScreen.Controls.Add(txtDangNhap);
+            pnlScreen.Controls.Add(txtTaiKhoan);
             pnlScreen.Controls.Add(lblTaiKhoan);
             pnlScreen.Controls.Add(lblTitle);
             pnlScreen.Controls.Add(pnlLeft);
@@ -70,6 +72,20 @@
             pnlScreen.Name = "pnlScreen";
             pnlScreen.Size = new Size(800, 450);
             pnlScreen.TabIndex = 1;
+            // 
+            // ckbHienMatKhau
+            // 
+            ckbHienMatKhau.AutoSize = true;
+            ckbHienMatKhau.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ckbHienMatKhau.ForeColor = Color.Gray;
+            ckbHienMatKhau.Location = new Point(412, 317);
+            ckbHienMatKhau.Name = "ckbHienMatKhau";
+            ckbHienMatKhau.Padding = new Padding(0, 5, 0, 0);
+            ckbHienMatKhau.Size = new Size(102, 22);
+            ckbHienMatKhau.TabIndex = 15;
+            ckbHienMatKhau.Text = "Hiện mật khẩu";
+            ckbHienMatKhau.UseVisualStyleBackColor = true;
+            ckbHienMatKhau.CheckedChanged += ckbHienMatKhau_CheckedChanged;
             // 
             // lnkDangNhap
             // 
@@ -85,7 +101,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(24, 119, 242);
-            panel1.Location = new Point(412, 327);
+            panel1.Location = new Point(412, 309);
             panel1.Name = "panel1";
             panel1.Size = new Size(320, 2);
             panel1.TabIndex = 5;
@@ -94,7 +110,7 @@
             // 
             txtHoTen.BorderStyle = BorderStyle.None;
             txtHoTen.Font = new Font("Segoe UI", 12F);
-            txtHoTen.Location = new Point(412, 307);
+            txtHoTen.Location = new Point(410, 109);
             txtHoTen.Name = "txtHoTen";
             txtHoTen.Size = new Size(320, 22);
             txtHoTen.TabIndex = 11;
@@ -104,7 +120,7 @@
             lblHoTen.AutoSize = true;
             lblHoTen.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             lblHoTen.ForeColor = Color.Gray;
-            lblHoTen.Location = new Point(410, 268);
+            lblHoTen.Location = new Point(412, 79);
             lblHoTen.Name = "lblHoTen";
             lblHoTen.Size = new Size(100, 17);
             lblHoTen.TabIndex = 10;
@@ -142,7 +158,7 @@
             // pnlLine2
             // 
             pnlLine2.BackColor = Color.FromArgb(24, 119, 242);
-            pnlLine2.Location = new Point(410, 240);
+            pnlLine2.Location = new Point(412, 225);
             pnlLine2.Name = "pnlLine2";
             pnlLine2.Size = new Size(320, 2);
             pnlLine2.TabIndex = 7;
@@ -151,18 +167,19 @@
             // 
             txtMatKhau.BorderStyle = BorderStyle.None;
             txtMatKhau.Font = new Font("Segoe UI", 12F);
-            txtMatKhau.Location = new Point(410, 220);
+            txtMatKhau.Location = new Point(412, 289);
             txtMatKhau.Name = "txtMatKhau";
             txtMatKhau.PasswordChar = '*';
             txtMatKhau.Size = new Size(320, 22);
             txtMatKhau.TabIndex = 6;
+            txtMatKhau.TextChanged += txtMatKhau_TextChanged;
             // 
             // lblMatKhau
             // 
             lblMatKhau.AutoSize = true;
             lblMatKhau.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             lblMatKhau.ForeColor = Color.Gray;
-            lblMatKhau.Location = new Point(412, 183);
+            lblMatKhau.Location = new Point(410, 258);
             lblMatKhau.Name = "lblMatKhau";
             lblMatKhau.Size = new Size(66, 17);
             lblMatKhau.TabIndex = 5;
@@ -171,26 +188,26 @@
             // pnlLine1
             // 
             pnlLine1.BackColor = Color.FromArgb(24, 119, 242);
-            pnlLine1.Location = new Point(410, 143);
+            pnlLine1.Location = new Point(412, 129);
             pnlLine1.Name = "pnlLine1";
             pnlLine1.Size = new Size(320, 2);
             pnlLine1.TabIndex = 4;
             // 
-            // txtDangNhap
+            // txtTaiKhoan
             // 
-            txtDangNhap.BorderStyle = BorderStyle.None;
-            txtDangNhap.Font = new Font("Segoe UI", 12F);
-            txtDangNhap.Location = new Point(412, 123);
-            txtDangNhap.Name = "txtDangNhap";
-            txtDangNhap.Size = new Size(320, 22);
-            txtDangNhap.TabIndex = 3;
+            txtTaiKhoan.BorderStyle = BorderStyle.None;
+            txtTaiKhoan.Font = new Font("Segoe UI", 12F);
+            txtTaiKhoan.Location = new Point(410, 205);
+            txtTaiKhoan.Name = "txtTaiKhoan";
+            txtTaiKhoan.Size = new Size(320, 22);
+            txtTaiKhoan.TabIndex = 3;
             // 
             // lblTaiKhoan
             // 
             lblTaiKhoan.AutoSize = true;
             lblTaiKhoan.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             lblTaiKhoan.ForeColor = Color.Gray;
-            lblTaiKhoan.Location = new Point(412, 86);
+            lblTaiKhoan.Location = new Point(410, 170);
             lblTaiKhoan.Name = "lblTaiKhoan";
             lblTaiKhoan.Size = new Size(68, 17);
             lblTaiKhoan.TabIndex = 2;
@@ -201,7 +218,7 @@
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             lblTitle.ForeColor = Color.Black;
-            lblTitle.Location = new Point(462, 9);
+            lblTitle.Location = new Point(462, 0);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(236, 60);
             lblTitle.TabIndex = 1;
@@ -253,7 +270,7 @@
         private TextBox txtMatKhau;
         private Label lblMatKhau;
         private Panel pnlLine1;
-        private TextBox txtDangNhap;
+        private TextBox txtTaiKhoan;
         private Label lblTaiKhoan;
         private Label lblTitle;
         private Panel pnlLeft;
@@ -262,5 +279,6 @@
         private TextBox txtHoTen;
         private Label lblHoTen;
         private LinkLabel lnkDangNhap;
+        private CheckBox ckbHienMatKhau;
     }
 }

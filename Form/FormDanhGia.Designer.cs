@@ -1,6 +1,6 @@
 ﻿namespace appSkincare
 {
-    partial class Form7
+    partial class FormDanhGia
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -184,7 +184,7 @@
             Controls.Add(cboSanPham);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "Form7";
+            Name = "FormDanhGia";
             Text = "Đánh giá sản phẩm";
             Load += Form7_Load;
             ((System.ComponentModel.ISupportInitialize)numSoSao).EndInit();

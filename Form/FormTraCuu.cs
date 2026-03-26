@@ -9,11 +9,11 @@ using System.Windows.Forms;
 
 namespace appSkincare
 {
-    public partial class Form4 : Form
+    public partial class FormTraCuu : Form
     {
         string chuoiKetNoi = @"Data Source=localhost;Initial Catalog=QuanLySkincare_V1;Integrated Security=True";
 
-        public Form4()
+        public FormTraCuu()
         {
             InitializeComponent();
         }
@@ -41,7 +41,7 @@ namespace appSkincare
 
                 SqlCommand cmd = new SqlCommand(sql, con);
                 // Trỏ cái ngày cần tìm vào ô lịch trên giao diện
-                cmd.Parameters.AddWithValue("@NgayLoc", dtpNgayThongKe.Text);
+                cmd.Parameters.AddWithValue("@NgayLoc", dtpNgayThongKe.Value.Date);
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -49,6 +49,8 @@ namespace appSkincare
 
                 // Đổ dữ liệu ra bảng
                 dgvThongKe.DataSource = dt;
+
+                dgvThongKe.Columns["NGÀY LT"].DefaultCellStyle.Format = "dd/MM/yyyy";
 
                 dgvThongKe.Columns["SẢN PHẨM ĐÃ DÙNG"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 

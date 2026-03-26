@@ -2,7 +2,7 @@ using System.Data;
 using System.Data.SqlClient;
 namespace appSkincare
 {
-    public partial class Form1 : Form
+    public partial class FormRountine : Form
     {
         string chuoiKetNoi = @"Data Source=localhost;Initial Catalog=QuanLySkincare_V1;Integrated Security=True";
         private void LoadSanPham()
@@ -21,12 +21,12 @@ namespace appSkincare
                 clbSanPham.ValueMember = "MaSP";
             }
         }
-        public Form1()
+        public FormRountine()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void FormRoutine_Load(object sender, EventArgs e)
         {
             LoadSanPham();
             LoadLichTrinh();
@@ -49,7 +49,7 @@ namespace appSkincare
             LEFT JOIN ChiTietRoutine ct ON r.MaRT = ct.MaRT
             LEFT JOIN SanPham sp ON ct.MaSP = sp.MaSP
             GROUP BY r.MaRT, r.Ngay, r.Buoi, r.TinhTrangDa
-            ORDER BY r.MaRT DESC"; // Xếp buổi mới nhất lên đầu
+            ORDER BY r.MaRT ASC"; // Xếp buổi mới nhất lên đầu
 
                 SqlDataAdapter da = new SqlDataAdapter(sql, con);
                 DataTable dt = new DataTable();
@@ -69,6 +69,8 @@ namespace appSkincare
 
                 dgvLichTrinh.Columns["TÌNH TRẠNG DA"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 dgvLichTrinh.Columns["TÌNH TRẠNG DA"].FillWeight = 100;
+
+                dgvLichTrinh.Columns["NGÀY LT"].DefaultCellStyle.Format = "dd/MM/yyyy";
             }
         }
 
@@ -101,7 +103,7 @@ namespace appSkincare
                                   SELECT SCOPE_IDENTITY();";
 
                     SqlCommand cmdRoutine = new SqlCommand(sqlRoutine, con, transaction);
-                    cmdRoutine.Parameters.AddWithValue("@Ngay", dtpNgay.Text);
+                    cmdRoutine.Parameters.AddWithValue("@Ngay", dtpNgay.Value.Date);
                     cmdRoutine.Parameters.AddWithValue("@Buoi", cboBuoi.Text);
                     cmdRoutine.Parameters.AddWithValue("@TinhTrangDa", txtTinhTrangDa.Text);
 
@@ -164,7 +166,7 @@ namespace appSkincare
                         cmd.Parameters.AddWithValue("@MaRT", maRT);
                         cmd.ExecuteNonQuery();
 
-                        MessageBox.Show("Đã xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Đã xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); MessageBox.Show("Đã xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         // Cập nhật lại bảng
                         LoadLichTrinh();

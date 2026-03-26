@@ -1,6 +1,6 @@
 ﻿namespace appSkincare
 {
-    partial class Form3
+    partial class FormSanPham
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSanPham));
             panel2 = new Panel();
             dgvSanPham = new DataGridView();
             txtSanPham = new TextBox();
@@ -160,7 +160,7 @@
             // 
             cboPhanLoai.DropDownStyle = ComboBoxStyle.DropDownList;
             cboPhanLoai.FormattingEnabled = true;
-            cboPhanLoai.Items.AddRange(new object[] { "Làm sạch", "Dưỡng ẩm", "Bảo vệ", "Phục hồi", "Trị mụn", "Trị thâm" });
+            cboPhanLoai.Items.AddRange(new object[] { "Làm sạch", "Dưỡng ẩm", "Dưỡng trắng", "Bảo vệ", "Phục hồi", "Trị mụn", "", "" });
             cboPhanLoai.Location = new Point(453, 92);
             cboPhanLoai.Name = "cboPhanLoai";
             cboPhanLoai.Size = new Size(110, 23);
@@ -203,15 +203,15 @@
             imageList1.ImageSize = new Size(16, 16);
             imageList1.TransparentColor = Color.Transparent;
             // 
-            // Form3
+            // FormSanPham
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(panel2);
-            Name = "Form3";
+            Name = "FormSanPham";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form3";
+            Text = "Quản lý sản phẩm";
             Load += Form3_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
