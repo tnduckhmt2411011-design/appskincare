@@ -14,7 +14,7 @@ namespace appSkincare
         public FormDangKy()
         {
             InitializeComponent();
-            // Gắn sự kiện cho các control
+            // Gắn events cho các control 
             lnkDangNhap.LinkClicked += lnkDangNhap_LinkClicked;
             btnThoat.Click += btnThoat_Click;
             btnDangKy.Click += btnDangKy_Click;
@@ -22,7 +22,7 @@ namespace appSkincare
 
         private void lnkDangNhap_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            // Ẩn Form đăng ký, mở Form đăng nhập và đóng Form đăng ký sau khi Form2 đóng
+            // Ẩn Form đăng ký, mở Form đăng nhập và đóng Form đăng ký sau khi Form đăng nhập đóng
             this.Hide();
             FormDangNhap frmLogin = new FormDangNhap();
             frmLogin.ShowDialog();
@@ -66,7 +66,7 @@ namespace appSkincare
                             txtTaiKhoan.Clear();
                             txtMatKhau.Clear();
 
-                            // Chuyển về Form đăng nhập
+                            // Chuyển về FormDangNhap
                             this.Hide();
                             FormDangNhap frmLogin = new FormDangNhap();
                             frmLogin.ShowDialog();
@@ -74,7 +74,7 @@ namespace appSkincare
                         }
                         else
                         {
-                            MessageBox.Show("Đăng ký thất bại. Vui lòng thử lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Đăng ký không thành công. Vui lòng thử lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
@@ -89,11 +89,6 @@ namespace appSkincare
             }
         }
 
-        private void txtMatKhau_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void ckbHienMatKhau_CheckedChanged(object sender, EventArgs e)
         {
             if (ckbHienMatKhau.Checked)
@@ -104,6 +99,9 @@ namespace appSkincare
             {
                 txtMatKhau.PasswordChar = '*'; // Ẩn chữ
             }
+        }
+        private void txtMatKhau_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

@@ -16,9 +16,9 @@ namespace appSkincare
         private Button currentButton;
         // Biến lưu trạng thái sidebar (mở / gọn)
         private bool isSidebarExpanded = true; // theo yêu cầu
-        // Timer dùng để tạo animation thu gọn / mở sidebar
+        // Timer dùng để tạo chuyển động cho sidebar
         private System.Windows.Forms.Timer sidebarTimer;
-        // Lưu text gốc của các nút để khôi phục khi mở sidebar
+        // Lưu text của các control để khôi phục khi mở sidebar
         private string btnMenuText;
         private string btnRoutineText;
         private string btnSanPhamText;
@@ -26,30 +26,29 @@ namespace appSkincare
         private string btnDanhGiaText;
         private string btnThoatText;
 
-        // Constructor bổ sung nhận tên người dùng và gắn sự kiện cho avatar / đăng xuất
+        // Constructor bổ sung nhận tên người dùng và gắn events cho avatar/nút đăng xuất
         public FormMenu(string hoTen)
         {
-            // Khởi tạo các control (bắt buộc)
+            // Khởi tạo các control
             InitializeComponent();
 
-            // --- Gắn sự kiện cho pbAccount và btnDangXuat NGAY BÊN DƯỚI InitializeComponent() ---
+            // Gắn events cho pbAccount và btnDangXuat
             if (pbAccount != null)
             {
                 pbAccount.Click += pbAccount_Click;
-                // Hiệu ứng hover: đổi màu nền khi chuột vào/ra
+                // Đổi màu nền khi chuột di vào/ra
                 pbAccount.MouseEnter += pbAccount_MouseEnter;
                 pbAccount.MouseLeave += pbAccount_MouseLeave;
             }
             if (btnDangXuat != null) btnDangXuat.Click += btnDangXuat_Click;
 
-            // Kiểm tra nhanh xem các control quan trọng có null hay đã Dispose không
-            // (nếu null, các hành động tiếp theo sẽ được bỏ qua để tránh ngoại lệ)
-            // Khởi tạo timer sidebar để tạo hiệu ứng mượt mà
+            // Kiểm tra xem các control quan trọng có null không (nếu null, các hành động tiếp theo sẽ được bỏ qua để tránh ngoại lệ)
+            // Khởi tạo timer sidebar để tạo hiệu ứng
             sidebarTimer = new System.Windows.Forms.Timer();
             sidebarTimer.Interval = 15; // ms: 10-15 ms để mượt
             sidebarTimer.Tick += sidebarTimer_Tick;
 
-            // Lưu lại text gốc của các nút để khôi phục khi mở rộng
+            // Lưu lại text gốc của các control để khôi phục khi mở rộng
             if (btnMenu != null) btnMenuText = btnMenu.Text;
             if (btnRoutine != null) btnRoutineText = btnRoutine.Text;
             if (btnSanPham != null) btnSanPhamText = btnSanPham.Text;
@@ -57,19 +56,19 @@ namespace appSkincare
             if (btnDanhGia != null) btnDanhGiaText = btnDanhGia.Text;
             if (btnThoat != null) btnThoatText = btnThoat.Text;
 
-            // Gắn sự kiện Click cho nút menu bằng code để chắc chắn luôn chạy
+            // Gắn event Click cho nút Menu bằng code để chắc chắn luôn chạy
             if (btnMenu != null)
             {
                 btnMenu.Click += btnMenu_Click;
             }
 
-            // Gắn sự kiện Click cho nút Đánh Giá nếu có
+            // Gắn event Click cho nút Đánh Giá
             if (btnDanhGia != null)
             {
                 btnDanhGia.Click += btnDanhGia_Click;
             }
 
-            // Hiển thị tên người dùng nếu nhãn tồn tại
+            // Hiện tên người dùng
             if (lblAccountName != null) lblAccountName.Text = "Chào " + hoTen;
 
             // Đảm bảo pnlAccountMenu ở trạng thái ẩn ban đầu
@@ -102,7 +101,7 @@ namespace appSkincare
             }
         }
 
-        // HÀM MỞ FORM CON VÀO TRONG PANEL
+        // HÀM MỞ FORM CON VÀO TRONG pnlScreen
         private void OpenChildForm(Form childForm, object btnSender)
         {
             // Tắt form cũ đang mở
@@ -128,7 +127,7 @@ namespace appSkincare
             childForm.Show();
         }
 
-        // GÁN SỰ KIỆN CLICK CHO TỪNG NÚT BÊN MENU
+        // GÁN EVENT CLICK CHO TỪNG NÚT BÊN MENU
         private void btnRoutine_Click_1(object sender, EventArgs e)
         {
             OpenChildForm(new FormRountine(), sender);
@@ -144,18 +143,18 @@ namespace appSkincare
             OpenChildForm(new FormTraCuu(), sender);
         }
 
-        // Sự kiện Click cho nút Đánh Giá: nhúng Form7 vào pnlScreen
         private void btnDanhGia_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormDanhGia(), sender);
         }
 
+        // hiển thị Form Routine đầu tiên
         private void FormMenu_Load(object sender, EventArgs e)
         {
             btnRoutine.PerformClick();
         }
 
-        // Sự kiện Tick của sidebar timer: tăng/giảm chiều rộng panel1
+        // Event Tick của sidebar timer (tăng/giảm chiều rộng pnlMenu)
         private void sidebarTimer_Tick(object sender, EventArgs e)
         {
             // Tốc độ thay đổi mỗi Tick (px)
@@ -164,17 +163,17 @@ namespace appSkincare
             if (isSidebarExpanded)
             {
                 // Nếu đang mở thì thu gọn lại
-                if (panel1.Width - step > 65)
+                if (pnlMenu.Width - step > 65)
                 {
-                    panel1.Width -= step;
+                    pnlMenu.Width -= step;
                 }
                 else
                 {
                     // Đạt kích thước nhỏ nhất, dừng timer và cập nhật trạng thái
-                    panel1.Width = 65;
+                    pnlMenu.Width = 65;
                     sidebarTimer.Stop();
                     isSidebarExpanded = false;
-                    // Ẩn text các nút khi thu gọn (chỉ giữ icon)
+                    // Ẩn text các nút khi thu gọn (chỉ giữ lại icon)
                     if (btnMenu != null) btnMenu.Text = string.Empty;
                     if (btnRoutine != null) btnRoutine.Text = string.Empty;
                     if (btnSanPham != null) btnSanPham.Text = string.Empty;
@@ -187,14 +186,14 @@ namespace appSkincare
             else
             {
                 // Nếu đang gọn thì mở ra
-                if (panel1.Width + step < 200)
+                if (pnlMenu.Width + step < 200)
                 {
-                    panel1.Width += step;
+                    pnlMenu.Width += step;
                 }
                 else
                 {
                     // Đạt kích thước lớn nhất, dừng timer và cập nhật trạng thái
-                    panel1.Width = 200;
+                    pnlMenu.Width = 200;
                     sidebarTimer.Stop();
                     isSidebarExpanded = true;
                     // Khôi phục text gốc khi mở rộng
@@ -215,13 +214,13 @@ namespace appSkincare
             sidebarTimer.Start();
         }
 
-        // Sự kiện Click cho nút btnMenu: gọi ToggleSidebar để thu/gom sidebar
+        // Event Click cho nút btnMenu: gọi ToggleSidebar để thu/gom sidebar
         private void btnMenu_Click(object sender, EventArgs e)
         {
             ToggleSidebar();
         }
 
-        // Sự kiện Click cho Avatar (pbAccount): đảo ngược trạng thái hiển thị của pnlAccountMenu
+        // Event Click cho Avatar (pbAccount): đảo ngược trạng thái hiển thị của pnlAccountMenu
         private void pbAccount_Click(object sender, EventArgs e)
         {
 
@@ -237,7 +236,7 @@ namespace appSkincare
             }
         }
 
-        // Hiệu ứng hover cho pbAccount: khi chuột vào thay đổi nền, khi chuột rời trả về trong suốt
+        // khi di chuột vào thay đổi nền, khi chuột rời trả về y cũ
         private void pbAccount_MouseEnter(object sender, EventArgs e)
         {
             if (pbAccount != null) pbAccount.BackColor = Color.LightSeaGreen;
@@ -248,10 +247,10 @@ namespace appSkincare
             if (pbAccount != null) pbAccount.BackColor = Color.Transparent;
         }
 
-        // Sự kiện Click cho nút Đăng xuất trong pnlAccountMenu
+        // Event Click cho nút Đăng xuất trong pnlAccountMenu
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
-            // Ẩn form hiện tại, mở Form2 dưới dạng dialog, sau đó đóng form này
+            // Ẩn Form hiện tại, mở Form2 dưới dạng dialog, sau đó đóng Form này
             this.Hide();
             FormDangNhap frmLogin = new FormDangNhap();
             frmLogin.ShowDialog();
@@ -267,7 +266,7 @@ namespace appSkincare
 
             if (dr == DialogResult.Yes)
             {
-                // tắt hết form
+                // tắt hết Form
                 Application.Exit();
             }
         }

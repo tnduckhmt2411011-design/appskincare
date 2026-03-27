@@ -16,6 +16,7 @@ namespace appSkincare
             lnkDangKy.LinkClicked += lnkDangKy_LinkClicked;
         }
 
+        // Ẩn Form đăng nhập, mở Form đăng ký và đóng Form đăng nhập sau khi Form đăng ký đóng
         private void lnkDangKy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();

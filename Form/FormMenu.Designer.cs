@@ -30,7 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
-            panel1 = new Panel();
+            pnlMenu = new Panel();
             btnDanhGia = new Button();
             imageList1 = new ImageList(components);
             btnThoat = new Button();
@@ -47,7 +47,7 @@
             panelMenu = new Panel();
             pbAccount = new PictureBox();
             label1 = new Label();
-            panel1.SuspendLayout();
+            pnlMenu.SuspendLayout();
             pnlScreen.SuspendLayout();
             pnlAccountMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -55,20 +55,20 @@
             ((System.ComponentModel.ISupportInitialize)pbAccount).BeginInit();
             SuspendLayout();
             // 
-            // panel1
+            // pnlMenu
             // 
-            panel1.BackColor = Color.Teal;
-            panel1.Controls.Add(btnDanhGia);
-            panel1.Controls.Add(btnThoat);
-            panel1.Controls.Add(btnThongKe);
-            panel1.Controls.Add(btnSanPham);
-            panel1.Controls.Add(btnRoutine);
-            panel1.Controls.Add(btnMenu);
-            panel1.Dock = DockStyle.Left;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(200, 720);
-            panel1.TabIndex = 1;
+            pnlMenu.BackColor = Color.Teal;
+            pnlMenu.Controls.Add(btnDanhGia);
+            pnlMenu.Controls.Add(btnThoat);
+            pnlMenu.Controls.Add(btnThongKe);
+            pnlMenu.Controls.Add(btnSanPham);
+            pnlMenu.Controls.Add(btnRoutine);
+            pnlMenu.Controls.Add(btnMenu);
+            pnlMenu.Dock = DockStyle.Left;
+            pnlMenu.Location = new Point(0, 0);
+            pnlMenu.Name = "pnlMenu";
+            pnlMenu.Size = new Size(200, 720);
+            pnlMenu.TabIndex = 1;
             // 
             // btnDanhGia
             // 
@@ -332,13 +332,13 @@
             BackColor = Color.White;
             ClientSize = new Size(1280, 720);
             Controls.Add(pnlScreen);
-            Controls.Add(panel1);
+            Controls.Add(pnlMenu);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormMenu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Quản lý lịch trình Skincare";
             Load += FormMenu_Load;
-            panel1.ResumeLayout(false);
+            pnlMenu.ResumeLayout(false);
             pnlScreen.ResumeLayout(false);
             pnlAccountMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -349,7 +349,7 @@
 
         #endregion
 
-        private Panel panel1;
+        private Panel pnlMenu;
         private Button btnThoat;
         private Button btnThongKe;
         private Button btnSanPham;
