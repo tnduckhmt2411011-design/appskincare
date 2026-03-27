@@ -1,0 +1,4 @@
+- Bấm vô Database -> Tải file .sql về -> Mở file trong SQL -> Chạy hết code để tạo Database
+- Trong trang này, bấm vô <>Code để tải về -> Open with Visual Studio
+- Qua phần code của tất cả các Form (trừ FormMenu) -> Ctr + F tìm dòng "string chuoiKetNoi =..." -> đổi Data Source = sever_name bên SQL của mấy ông
+- Chạy app
