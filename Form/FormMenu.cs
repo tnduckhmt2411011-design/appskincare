@@ -158,7 +158,7 @@ namespace appSkincare
         private void sidebarTimer_Tick(object sender, EventArgs e)
         {
             // Tốc độ thay đổi mỗi Tick (px)
-            int step = 25; // có thể đặt tuỳ ý
+            int step = 55; // có thể đặt tuỳ ý
 
             if (isSidebarExpanded)
             {

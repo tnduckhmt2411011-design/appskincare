@@ -80,7 +80,7 @@ namespace appSkincare
                 }
                 catch (SqlException sqlEx) when (sqlEx.Number == 2627 || sqlEx.Number == 2601)
                 {
-                    MessageBox.Show("Tên đăng nhập đã tồn tại! Vui lòng chọn tên khác.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Tài khoản đã tồn tại! Vui lòng nhập tài khoản khác.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch (Exception ex)
                 {

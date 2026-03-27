@@ -59,7 +59,6 @@ namespace appSkincare
                     if (result != null)
                     {
                         string hoTenNguoiDung = result.ToString(); // Ép kiểu lấy họ tên
-                        MessageBox.Show("Đăng nhập thành công", "Chào mừng", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         FormMenu frmDash = new FormMenu(hoTenNguoiDung);
                         this.Hide(); // Giấu form đăng nhập đi
